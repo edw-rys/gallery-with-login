@@ -1,0 +1,116 @@
+extends ../config/template
+append config
+  -pageTitle = 'Home'
+  -pageDescription = 'Pagina inicial de EDboilerplate'
+  //- -pageImage = ''
+
+block main
+  -let urlIconGoogle="./assets/img/icons/google.svg"
+  -let urlIconMale="./assets/img/icons/male.svg"
+  -let urlIconFemale="./assets/img/icons/female.svg"
+  -let logo="./assets/img/icon.png"
+  -let nave="./assets/img/background/nave.png"
+  .content-center
+    .panel-public.c-c-first.style-scroll-bar-5#p-public
+      include ../includes/layout_detail.pug
+                      
+      .banner
+        h2.center Banner de la semana
+        .content-banner-gallery
+          //- img(src="./assets/img/nave.png", alt="")
+
+      block galery
+        include ../components/galery.pug
+      include ../includes/themes.pug
+      
+    .panel-operations.c-c-first
+      .a(href="#op",class="center bubbly-button btn-p-public",onClick="scrllPS('p-public','panel-public-active',this);",textChange="Ocultar Novedades") Últimas Novedades
+      
+      .picture-lg#op
+        img(src=nave, alt="",id="img-zq")
+      .content-tnx
+        .container-login.contaner-tnx.first.c-c-first
+          .form-login
+            form( onsubmit="return false")
+              label
+                input(type="text",id="userLI",placeholder="Usuario",required)
+                i.fas.fa-user
+              label
+                input(type="password",placeholder="Contraseña",required)
+                i.fas.fa-key
+              .op-submit
+                
+                //- input(type="submit",class="bubbly-button",value="Ingresar")
+                <button type="submit" class="bubbly-button submit">Ingresar</button>
+                br
+                a(href="#") ¿Olvidó su contraseña?
+          .line-symbol
+          //- p Iniciar sesión por medio de:
+          .social-container
+            ul.social-icons
+              li.facebook
+                a(href="#")
+                  i.fab.fa-facebook-f
+              li.instagram
+                a(href="#")
+                  i.fab.fa-instagram
+              li.twitter
+                a(href="#")
+                  i.fab.fa-twitter
+
+        
+        #container-signup.container-signup.contaner-tnx.third.c-c-second
+          .signup-open
+            .open
+              h2 Registrarse
+              #icon-open.icon-open: i#fas.fas.fa-user-plus
+            #content-signup.content-signup.hidden
+              .form-signup
+                form(action="", onsubmit="return validateRegister()")
+                  label
+                    input(type="text",id="name",placeholder="Nombre",required)
+                    i.fas.fa-user
+                  label
+                    input(type="text",id="username",class="us",placeholder="Usuario",required)
+                    i.fas.fa-user
+                  label
+                    input(type="password",placeholder="Contraseña",required)
+                    i.fas.fa-key
+                  .container
+                    //- div.title
+                    //-   h3 Género
+                    .radio-tile-group  
+                      .input-container.male
+                        input(type="radio",id="male",class="radio-button",name="gender", required)
+                        .radio-tile
+                          .icon.male-icon
+                            img(src=urlIconMale, alt="")
+                            //- i.fas.fa-male
+                          div:label.radio-tile-label Masculino
+                      .input-container.female
+                        input(type="radio",id="female",class="radio-button",name="gender",required)
+                        .radio-tile
+                          .icon.female-icon
+                            img(src=urlIconFemale, alt="")
+                            //- i.fas.fa-female
+                          div:label.radio-tile-label Femenino    
+                  .op-submit
+                    //- input(type="submit",class="submit button button-second",value="Registrar")
+                    <button type="submit" class="bubbly-button submit">Registrar</button>
+              .line-symbol
+              .social-container
+                ul.social-icons
+                  li.facebook
+                    a(href="#")
+                      i.fab.fa-facebook-f
+                  li.instagram
+                    a(href="#")
+                      i.fab.fa-instagram
+                  li.twitter
+                    a(href="#")
+                      i.fab.fa-twitter
+    
+
+
+    
+    

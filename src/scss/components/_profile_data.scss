@@ -1,0 +1,28 @@
+.profile_post_grid{
+    position: absolute;
+    bottom: 5px;
+    // width: 100px;
+    .img-p-p{
+
+      a{
+        justify-content: center;
+        display: inline;
+        color: var(--color);
+        text-decoration: none;
+        .photo{
+          line-height: 35px;
+          // display:inline-block;
+          
+          img{width: 35px;
+            float: left;
+            border-radius: 50%;
+          }
+          p{float: left;margin-left: 5px;
+            color: var(--color-text);
+            // display:inline-block;
+          }
+        }
+        
+      }
+    }
+  }

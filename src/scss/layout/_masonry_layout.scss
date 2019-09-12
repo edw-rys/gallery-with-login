@@ -1,0 +1,26 @@
+.panel-public{
+  overflow-y: auto;
+  max-height: auto;
+}
+  
+  .masonry-layout {
+    --columns: 1;
+    --gap: 1rem;
+    $columns: 6;
+    
+    display: grid;
+    grid-template-columns: repeat(var(--columns),1fr);
+    grid-gap: var(--gap);
+    @media(max-width:600px){
+      --gap: 0.6rem;
+    }
+    .masonry-item{
+      margin-bottom: var(--gap);
+    }
+    
+    @for $i from 1 through $columns {
+      &.columns-#{$i}{
+        --columns: #{$i};
+      }
+    }
+  }

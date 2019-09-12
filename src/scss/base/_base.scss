@@ -1,0 +1,89 @@
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+}
+*{
+	padding: 0;
+	margin: 0;
+}
+body {
+  	margin : 0;
+	font-family : $font-family;
+	background: var(--color-background-bck);
+}
+.contaier-all{
+	width: 100%;
+	height: 100%;
+}
+header{
+	text-align: center;	
+}
+h1{
+	color: var(--color-h1);
+	font-size: 30px;
+}
+p{
+	color: var(--color-text);
+	font-size: 15px;
+}
+h2{
+	font-size: 30px;
+	color: var(--color-h2);
+}
+
+.contaner-tnx{
+	text-align: center;
+}
+
+.logo{
+	width: 5em;
+}
+.hidden{
+	display:none;
+}
+.center{
+	text-align: center;
+	justify-content: center;
+}
+.border-top{
+	border-top: 2px solid black;//var(--color);
+}
+.not-detail{
+	text-decoration: none;
+	list-style: none;
+}
+.p-5{
+	padding: 5px;
+}
+.float-left{
+	float: left;
+}
+.float-right{
+	float: right;
+}
+//flex
+.d-flex{
+	display: flex;
+}
+.equalFlex {
+	flex: 1;
+}
+	//EQUAL HEIGHT + WIDTH COLUMNS WITH MARGINS
+.equalHMWrap {
+	justify-content: space-between;
+}
+	//with multiple rows
+.equalHMRWrap {
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+
+//grid
+.grid{
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+
+}

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>TNX tim</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="Pagina inicial de EDboilerplate">
+    <meta property="og:image" content="">
+    <meta name="theme-color" id="h-t-color" content="">
+    <link rel="stylesheet" href="assets/css/new/styles.css">
+    <link rel="shortcut icon" href="assets/img/icon.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+  </head>
+  <body>
+    <div class="galaxy-theme" id="container-all">
+      <div class="content-center">
+        <div class="panel-public c-c-first style-scroll-bar-5" id="p-public">
+          <div class="details c-c-details-dark">
+            <div class="header-details">
+              <div class="title">Hola, bienvenido a TNX App</div>
+              <div class="desc">We are planning to get together on friday night to have some fun, join if you are free!          </div>
+              <div class="hosted-by"><span class="tittle">Titulo<span class="name">Tim01</span></span><img src="https://s5.postimg.cc/lfc6se3hf/image.png" alt=""></div>
+              <div class="hosted-by float-right"><span class="tittle">Titulo<span class="name">Tim01</span></span><img src="https://s5.postimg.cc/lfc6se3hf/image.png" alt=""></div>
+              <div class="hosted-by"><span class="tittle">Titulo<span class="name">Tim01</span></span><img src="https://s5.postimg.cc/lfc6se3hf/image.png" alt=""></div>
+              <div class="body-details">
+                <div class="user-status">
+                  <div class="title">You Are</div>
+                  <div class="status">
+                    <ul class="user-status d-flex clearfix">
+                      <li class="equalFlex active">
+                        going<i class="fa fa-check"></i></li>
+                      <li class="equalFlex">Not going</li>
+                      <li class="equalFlex">May BE</li>
+                    </ul>
+                    <div class="event-info d-flex equalHMWrap"><span class="going-status">
+                        <h2 class="center white">Usuarios</h2>
+                        <ul>
+                          <li><img src="https://s5.postimg.cc/vqojl1v6r/image.png" alt=""></li>
+                          <li><img src="https://s5.postimg.cc/h4xiwsyeb/image.png" alt=""></li>
+                          <li><img src="https://s5.postimg.cc/xjrg9dgdf/image.png" alt=""></li>
+                          <li class="li-more">+50</li>
+                        </ul><span class="desc"><span class="fuschia">
+                            <div class="count">3</div><a class="btn-detail bubbly-button not-detail" href="#">Banners</a></span><span>
+                            <div class="count">15</div><a class="btn-detail bubbly-button not-detail" href="#gallery">View Post</a></span></span></span><span class="date-event"><span class="going-date"><span class="date grid"> <sup class="item">25</sup><span class="item btn-detail">Friday</span><span class="item btn-detail">August</span></span><span class="desc"><span class="btn-detail">Around 7:30 PM</span></span></span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="banner">
+            <h2 class="center">Banner de la semana</h2>
+            <div class="content-banner-gallery"></div>
+          </div>
+          <h1 class="center p-5">Imagenes de este mes</h1>
+          <div class="gallery c-c-white-opaque" id="gallery"></div>
+          <script>const urlImgC="./assets/img/pictures/"
+let contet=[{
+        'type':'img',
+        'name':'post_1.jpg',
+        'user':'@tim01',
+        'likes':452
+    }
+    ,
+    {
+        'type':'img',
+        'name':'post_2.jpg',
+        'user':'@edw',
+        'likes':452
+    }
+    ,
+    {
+        'type':'img',
+        'name':'post_3.jpg',
+        'user':'@kp',
+        'likes':1256
+    }
+    ,
+    {
+        'type':'img',
+        'name':'post_4.jpg',
+        'user':'@tim01',
+        'likes':402
+    },
+    {
+        'type':'img',
+        'name':'post_6.jpg',
+        'user':'@tim01',
+        'likes':563
+    },
+    {
+        'type':'img',
+        'name':'post_7.jpg',
+        'user':'@karol',
+        'likes':1352
+    },
+    {
+        'type':'img',
+        'name':'post_8.jpg',
+        'user':'@toni',
+        'likes':200
+    },{
+        'type':'img',
+        'name':'post_9.jpg',
+        'user':'@veronica',
+        'likes':500
+    },{
+        'type':'img',
+        'name':'post_10.jpg',
+        'user':'@tnx',
+        'likes':624
+    },{
+        'type':'img',
+        'name':'post_11.jpg',
+        'user':'@monster',
+        'likes':452
+    },{
+        'type':'img',
+        'name':'post_12.jpg',
+        'user':'@nz',
+        'likes':145
+    },{
+        'type':'img',
+        'name':'post_13.jpg',
+        'user':'@gif',
+        'likes':256
+    },{
+        'type':'img',
+        'name':'post_14.jpg',
+        'user':'@aguacate',
+        'likes':256
+    },{
+        'type':'img',
+        'name':'post_15.jpg',
+        'user':'@veronica',
+        'likes':152
+    },{
+        'type':'img',
+        'name':'post_16.gif',
+        'user':'@veronica',
+        'likes':1263
+    }
+    ,{
+        'type':'video',
+        'name':'post_17.mp4',
+        'user':'@laila',
+        'likes':1256
+    }
+];
+
+function addPicturesF(){
+    var domStr=""
+    var gallery=document.getElementById('gallery');
+    for (let element of contet){
+        domStr+=
+        '<div class="gallery-item">'+
+            '<div class="header-gallery">'+
+                '<span class="more">'+
+                    '<div id="heart-reaction" class="action c-c-fuschia btn-light">'+
+                        '<i class="fas fa-heart"></i><p>'+element.likes+'</p>'+
+                    '</div>'+
+                    '<div id="add-collecion" class="action btn-light"> '+
+                        '<i class="fas fa-plus"></i>Colección<p></p>'+
+                    '</div>'+
+                '</span>'+
+            '</div>';
+            
+            if(element.name.indexOf('mp4')>-1){
+                domStr+='<div class="image">'+
+                '<video src="'+urlImgC+element.name+'" autoplay muted>'+
+                '</div>';
+            }
+            else{
+                domStr+='<div class="image"><img src="'+urlImgC+element.name+'">'+
+                '</div>';
+            }
+            domStr+=
+        '<div class="profile_post_grid white">'+
+            '<div class="img-p-p">'+
+                '<a href="#">'+
+                    '<div class="photo">'+
+                        '<img src="'+urlImgC+'profile/icon_profile.jpg"><p>'+element.user+'</p>'+
+                    '</div>'+
+                '</a>'+
+            '</div>'+
+        '</div>'+
+    '</div>';
+    }
+    gallery.innerHTML=domStr
+}
+addPicturesF();
+          </script>
+          <div class="panel-themes">
+            <h1 class="center">Selección de temas</h1>
+          </div><div id="boxes" class=" dark-white">
+<div class="galaxy-icon" camp="galaxy" onClick="changeTheme('galaxy')"></div>
+<div class="shark-icon" camp="shark" onClick="changeTheme('shark')"></div>
+<div class="whale-icon" camp="whale" onClick="changeTheme('whale')"></div>
+<div class="samoyed-icon" camp="samoyed" onClick="changeTheme('samoyed')"></div>
+<div class="wolf-icon text-dark" camp="wolf" onClick="changeTheme('wolf')"></div>
+<div class="phoenix-icon" camp="phoenix" onClick="changeTheme('phoenix')"></div>
+</div>
+        </div>
+        <div class="panel-operations c-c-first">
+          <div class="a center bubbly-button btn-p-public" href="#op" onClick="scrllPS('p-public','panel-public-active',this);" textChange="Ocultar Novedades">Últimas Novedades</div>
+          <div class="picture-lg" id="op"><img src="./assets/img/background/nave.png" alt="" id="img-zq"></div>
+          <div class="content-tnx">
+            <div class="container-login contaner-tnx first c-c-first">
+              <div class="form-login">
+                <form onsubmit="return false">
+                  <label>
+                    <input type="text" id="userLI" placeholder="Usuario" required><i class="fas fa-user"></i>
+                  </label>
+                  <label>
+                    <input type="password" placeholder="Contraseña" required><i class="fas fa-key"></i>
+                  </label>
+                  <div class="op-submit"><button type="submit" class="bubbly-button submit">Ingresar</button><br><a href="#">¿Olvidó su contraseña?</a></div>
+                </form>
+              </div>
+              <div class="line-symbol"></div>
+              <div class="social-container">
+                <ul class="social-icons">
+                  <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                  <li class="instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                  <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="container-signup contaner-tnx third c-c-second" id="container-signup">
+              <div class="signup-open">
+                <div class="open">
+                  <h2>Registrarse</h2>
+                  <div class="icon-open" id="icon-open"><i class="fas fa-user-plus" id="fas"></i></div>
+                </div>
+                <div class="content-signup hidden" id="content-signup">
+                  <div class="form-signup">
+                    <form action="" onsubmit="return validateRegister()">
+                      <label>
+                        <input type="text" id="name" placeholder="Nombre" required><i class="fas fa-user"></i>
+                      </label>
+                      <label>
+                        <input class="us" type="text" id="username" placeholder="Usuario" required><i class="fas fa-user"></i>
+                      </label>
+                      <label>
+                        <input type="password" placeholder="Contraseña" required><i class="fas fa-key"></i>
+                      </label>
+                      <div class="container">
+                        <div class="radio-tile-group"> 
+                          <div class="input-container male">
+                            <input class="radio-button" type="radio" id="male" name="gender" required>
+                            <div class="radio-tile">
+                              <div class="icon male-icon"><img src="./assets/img/icons/male.svg" alt=""></div>
+                              <div:label class="radio-tile-label">Masculino</div:label>
+                            </div>
+                          </div>
+                          <div class="input-container female">
+                            <input class="radio-button" type="radio" id="female" name="gender" required>
+                            <div class="radio-tile">
+                              <div class="icon female-icon"><img src="./assets/img/icons/female.svg" alt=""></div>
+                              <div:label class="radio-tile-label">Femenino    </div:label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="op-submit"><button type="submit" class="bubbly-button submit">Registrar</button></div>
+                    </form>
+                  </div>
+                  <div class="line-symbol"></div>
+                  <div class="social-container">
+                    <ul class="social-icons">
+                      <li class="facebook"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                      <li class="instagram"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                      <li class="twitter"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal hidden style-scroll-bar-5" id="modal1">
+        <div class="header-modal c-c-white-opaque panel-dark"></div>
+        <div class="modal-content"></div>
+      </div>
+      <div class="modal-overlay hidden"></div>
+      <footer>
+        <div class="contribucion hidden"><div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" 			    title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.flaticon.es/autores/srip" title="srip">srip</a> from <a href="https://www.flaticon.es/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+<div>Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.es/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        </div>
+      </footer>
+    </div>
+    <script>function toggleClass(element,classA){
+    document.getElementById(element).classList.toggle(classA);
+}
+
+function toggleClassInnerHtml(element,classA, ob){
+    document.getElementById(element).classList.toggle(classA);
+    var text=ob.getAttribute('textChange');
+    ob.setAttribute('textChange',ob.innerText);
+    ob.innerText=text;
+}
+
+
+function scrollToTop() {
+    var showButton = 600,
+        scrollSpeed = 1000; 
+    
+    // var scrollPosition = window.scrollY,
+    //     scrollButton = document.getElementById(element);
+    // window.addEventListener("scroll", function() {
+    //     scrollPosition = window.scrollY;
+    //     showButton < scrollPosition ? scrollButton.classList.add("visible") : scrollButton.classList.remove("visible")
+    // });
+    // scrollButton.onclick = function() {
+    //     scrollTop(scrollSpeed)
+    // }
+}
+function scrollTop(b) {
+    function a(d) {
+        c += Math.PI / (b / (d - e));
+        c >= Math.PI && window.scrollTo(0, 0);
+        0 !== window.scrollY && (window.scrollTo(0, Math.round(scrollTime + scrollTime * Math.cos(c))), e = d, window.requestAnimationFrame(a))
+    }
+    var scrollTime = window.scrollY / 2,
+        c = 0,
+        e = performance.now();
+    window.requestAnimationFrame(a)
+}
+function scrllPS(a,b,c){
+    toggleClassInnerHtml(a,b,c);
+    scrollTop(1000);
+}
+    </script>
+    <script>
+var animateButton = function(e) {
+
+    e.preventDefault;
+    //reset animation
+    e.target.classList.remove('animate');
+    
+    e.target.classList.add('animate');
+    setTimeout(function(){
+      e.target.classList.remove('animate');
+    },700);
+  };
+  
+  var bubblyButtons = document.getElementsByClassName("bubbly-button");
+  
+  for (var i = 0; i < bubblyButtons.length; i++) {
+    bubblyButtons[i].addEventListener('click', animateButton, false);
+  }
+    </script>
+    <script>var openBtn=document.getElementById('icon-open');
+      openBtn.addEventListener('click',function(){
+        container=document.getElementById('container-signup');
+        content=document.getElementById('content-signup');
+        icon=document.getElementById('fas');
+        container.classList.toggle('container-signup-active');
+        content.classList.toggle('hidden');
+        icon.classList.toggle('fa-times');
+      });
+    </script>
+    <script>const masonryLayout = (containerElem, itemsElems, columns) => {
+    containerElem.classList.add('masonry-layout', `columns-${columns}`)
+    let columnsElements = []
+    
+    for( let i = 1; i <= columns; i++){
+      let column = document.createElement('div')
+      column.classList.add('masonry-column', `column-${i}`)
+      containerElem.appendChild(column)
+      columnsElements.push(column)
+    }
+    
+    for(let m = 0; m < Math.ceil(itemsElems.length / columns); m++){
+      for(let n = 0; n < columns; n++){
+        let item = itemsElems[ m * columns + n]
+        columnsElements[n].appendChild(item)
+        item.classList.add('masonry-item')
+      }
+    }
+  }
+  
+  masonryLayout(document.getElementById('gallery'),
+                document.querySelectorAll('.gallery-item'), 2)
+    </script>
+    <script>var itemList=document.getElementsByClassName('gallery-item');//selected all items
+
+for(let item of itemList){
+    item.children[1].addEventListener('click', openModal);
+}
+var l
+function openModal(e){
+    var item;
+    if(e.path[0].hasAttribute('src'))
+        item=e.path[2]
+    else
+        item=e.path[1]
+    document.getElementsByClassName('modal-overlay')[0].classList.remove('hidden')
+    console.log(item);
+    var src=item.children[1].children[0].src;
+    console.log("no");
+    var modal=document.getElementById('modal1');
+    modal.classList.remove('hidden');   
+    var content='<div class="profile">'+item.children[2].innerHTML+'</div>'+item.children[0].innerHTML
+    modal.children[0].innerHTML=content
+    if(e.path[0].hasAttribute('src')){
+        // item.children[1].children[0].toggleAttribute('controls');
+        modal.children[1].innerHTML=item.children[1].innerHTML
+        console.log(modal.children[1] )
+        modal.children[1].children[0].toggleAttribute('controls');
+    }else
+        modal.children[1].innerHTML=item.children[1].innerHTML
+    
+    
+}
+document.getElementsByClassName('modal-overlay')[0].addEventListener('click',()=>{
+    var modal=document.getElementById('modal1')
+    document.getElementsByClassName('modal-overlay')[0].classList.add('hidden');
+    modal.children[1].innerHTML="";//children[0].removeAttribute('controls');
+    modal.classList.add('hidden');
+});
+
+    </script>
+    <script>tippy('.facebook', {
+    content: "Facebook",
+    placement: 'top',
+    arrow: true,
+     arrowType: 'round'
+  })
+  tippy('.instagram', {
+    content: "Instagram",
+    placement: 'top',
+    arrow: true,
+     arrowType: 'round'
+  })
+  tippy('.twitter', {
+    content: "Twitter",
+    placement: 'top',
+    arrow: true,
+     arrowType: 'round'
+  })
+  tippy('.codepen', {
+    content: "Codepen",
+    placement: 'top',
+    arrow: true,
+     arrowType: 'round'
+  })
+
+  tippy('.google', {
+    content: "google",
+    placement: 'top',
+    arrow: true,
+     arrowType: 'round'
+  }) 
+    </script>
+    <script>let themesUrl=[
+  {
+    'name':'galaxy',
+    'class':'galaxy-theme',
+    'backgroundUrl':'../../img/background/background.jpg',
+    'urlImage':'./assets/img/background/nave.png',
+    'iconUrl':'./assets/img/icons/theme/galaxy.jpg',
+    'color':'#3C00D0'
+  },
+  {
+    'name':'wolf',
+    'class':'wolf-theme',
+    'backgroundUrl':'../../img/background/bck-wolf.jpg',
+    'urlImage':'./assets/img/background/moon.png',
+    'iconUrl':'./assets/img/icons/theme/wolf.jpg',
+    'color':'#282D31'
+  },
+  {
+    'name':'samoyed',
+    'class':'samoyed-theme',
+    'backgroundUrl':'../../img/background/bck-samoyed.jpg',
+    'iconUrl':'./assets/img/icons/theme/samoyed.jpg',
+    'urlImage':'./assets/img/background/samoyed.png',
+    'color':'#018ABA'
+  },
+  {
+    'name':'shark',
+    'class':'shark-theme',
+    'backgroundUrl':'../../img/background/aquarus.jpg',
+    'iconUrl':'./assets/img/icons/theme/shark.jpg',
+    'urlImage':'./assets/img/background/lemon-shark.png',
+    'color':'#003B8B'
+  },
+  {
+    'name':'whale',
+    'class':'whale-theme',
+    'backgroundUrl':'../../img/background/bck-medusa.jpg',
+    'urlImage':'./assets/img/background/whale.png',
+    'iconUrl':'./assets/img/icons/theme/whale.jpg',
+    'color':'#F72500'
+  },
+  {
+    'name':'phoenix',
+    'class':'phoenix-theme',
+    'backgroundUrl':'../../img/background/bck-phoenix.jpg',
+    'urlImage':'./assets/img/background/phoenix.png',
+    'iconUrl':'./assets/img/icons/theme/phoenix.jpg',
+    'color':'#CF4600'
+  }
+]
+
+const themeColorHtml=document.getElementById('h-t-color');
+themeColorHtml.setAttribute('content','#3C00D0');
+var boxes = document.querySelectorAll('#boxes > div');
+  [].forEach.call(boxes, box => {
+    box.addEventListener('mousemove', e => {
+      var size = parseInt(getComputedStyle(box).width);
+      
+      // scaling
+      var x = size * .3 * .7 + .7 * e.offsetX;
+      var y = size * .3 * .7 + .7 * e.offsetY;
+      
+      box.style.setProperty('--x', x);
+      box.style.setProperty('--y', y);
+      box.style.setProperty('--size', size);
+    });
+  }
+  
+  );
+
+
+  
+function changeTheme(name){
+  for(let theme of themesUrl){
+    if(theme.name==name && name!==undefined){
+      document.getElementById('img-zq').setAttribute('src',theme.urlImage);
+      document.getElementById('container-all').className=theme.class;
+      themeColorHtml.setAttribute('content',theme.color);
+    }
+  }
+}
+function addIcon(){
+  var boxes = document.querySelectorAll('#boxes > div');
+  for(var camp of boxes){
+    if(camp.getAttribute('camp'))
+      for(let t of themesUrl){
+        if(t.name)
+          if(t.name==camp.getAttribute('camp')){
+            camp.style.backgroundImage="url("+t.iconUrl+")";
+            camp.style.backgroundSize="cover";
+            break;
+          }
+      }
+  }
+}
+addIcon();
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+block config
+  include variables
+doctype html
+html(lang="es")
+  head
+    title TNX tim
+    meta(charset="utf-8")
+    meta(name="viewport" content="initial-scale=1.0, width=device-width")
+    meta(name="twitter:card" content="summary_large_image")
+    //- meta(name="twitter:site" content=twitterAccount)
+    //- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    meta(property="og:title" content=pageTitle)
+    meta(property="og:description" content=pageDescription)
+    meta(property="og:image" content=pageImage)
+    meta(name="theme-color", id="h-t-color", content="")
+    link(rel="stylesheet" href="assets/css/new/styles.css")
+    link(rel="shortcut icon" href="assets/img/icon.png")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" )
+    
+    script(src="https://unpkg.com/popper.js@1")
+    script(src="https://unpkg.com/tippy.js@4")
+  body
+    #container-all.galaxy-theme
+      //- block menu
+        //- include ../components/menu.pug
+      block main
+      include ../components/modal.pug
+      block footer
+        include ../includes/footer.pug
+    
+    script
+        include ../../js/more/functions.js
+    script
+      include ../../js/modules/button_effect.js
+    script
+      include ../../js/modules/register-active.js
+    script
+      include ../../js/modules/masonry_layout.js
+    script
+      include ../../js/modules/modal_gallery.js
+    script
+      include ../../js/modules/tooltip.js
+    script
+      include ../../js/modules/change_themes.js
+
+

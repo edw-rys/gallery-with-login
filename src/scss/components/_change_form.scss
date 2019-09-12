@@ -1,0 +1,140 @@
+
+.opciones-tnx {
+	--color-text: #9B9B9B;
+	--color: #000;
+	text-align: center;
+	display: none;
+	h3{
+        margin:29px;
+        color: var(--color-light);
+	    font-size: 30px;
+	}
+	p{
+        color: var(--color);
+		margin:15px;
+	}
+	button{
+		padding: 5px 8px;
+	}
+	.op-tnx{
+		background: rgba(0,83,148,.3);	
+	}
+	
+}
+
+.oculto{
+    display:none;
+}
+@media (min-width: 500px){
+    .block-form .ocultar-panel{
+        display: none;
+    }
+    #icon-open{
+        display: none;
+    }
+
+    .opciones-tnx{
+        width: 80%;
+        height: 60%;
+        background-color: var(--color-panel-second);
+        display: inline-flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    
+    .opciones-tnx .op-tnx{
+        padding: 50px;
+        width: 50%;
+    }
+    
+    /*Opciones END*/
+    /*FORM START*/
+    
+    .block-form{
+        width: auto;
+        height: auto;
+    }
+    .block-form .contaner-tnx form{
+        width: auto;
+        height: auto;
+    }
+    .block-form .contaner-tnx form{
+        display: inline-grid;
+        padding: 0 50px;
+    }
+    
+    .block-form{
+        position: fixed;
+        height: 74%;
+        display: inline-flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(0%,-50%);
+        overflow: hidden;
+        transition: 1s;
+    }
+    .block-form-left{
+        transform: translate(-100%,-50%);
+    }
+    
+    .block-form .contaner-tnx{
+        width:425px;
+        height: 100%;
+    }
+    
+}
+@media (max-height: 500px){
+    .block-form{
+        height: 70%;
+    }
+    .block-form .contaner-tnx form a{
+        font-size: 15px;
+    }	
+}
+@media (max-height: 400px){
+        .block-form{
+            height: 80%;
+        }
+        .opciones-tnx{
+            height: 70%;
+        }
+        .block-form .contaner-tnx form a{
+            font-size: 15px;
+        }
+    }
+    
+    @media (max-height: 350px){
+        .block-form{
+            height: 95%;
+        }
+        .opciones-tnx{
+            height: 85%;
+        }
+        .block-form .contaner-tnx form a{
+            font-size: 15px;
+        }
+    }
+    
+    
+    @media (max-width:720px) and (min-height: 700px){
+        .opciones-tnx .op-tnx{
+            border-radius: 15px;	
+        }
+        .block-form{
+            margin: 10% 0;
+        }
+    }
+    @media (max-width: 1050px) and (min-height: 900px){
+        .block-form{
+            height: 40%;
+        }
+        .opciones-tnx{
+            height: 30%;
+        }
+    
+    }
+    
+

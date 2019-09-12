@@ -1,0 +1,29 @@
+input:not([type="submit"]):focus{
+    color: var(--color-text);
+	border-color: var(--color);
+}
+input:not([type="submit"]):focus +i{
+    color: var(--color);
+}
+input:not([type="submit"]){
+	font-size: 1em;
+	color:var(--color-text);
+	background: transparent;
+	color: var(--color-text-opaque);
+	padding-right: 30px; 
+	width: 230px;
+	cursor: text;
+	margin: 10px;
+	caret-color: var(--color);
+	border: 0;
+	outline: none;
+	border-bottom: 1px solid var(--color);
+}
+
+.op-submit{
+	padding: 20px 60px;
+	// display: inline-grid;
+}
+.submit{
+	width: 50%;
+}
