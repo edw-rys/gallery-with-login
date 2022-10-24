@@ -23,7 +23,7 @@
     "ed-grid": "^2.8.1",
     "gulp": "^3.9.1",
     "gulp-babel": "^8.0.0",
-    "gulp-cache-bust": "^1.4.0",
+    "gulp-cache-bust": "^1.4.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-minify": "^3.1.0",
     "gulp-plumber": "^1.2.0",
